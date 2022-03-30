@@ -8,8 +8,8 @@ namespace SalesWebMVC.Services
 {
     public class SellerService
     {
+        //permite que essa dependencia não seja alterada
         private readonly SalesWebMvcContext _context;
-
 
         public SellerService(SalesWebMvcContext context)
         {
@@ -17,10 +17,11 @@ namespace SalesWebMVC.Services
         }
 
 
-        //operações com FindAll que retornar todos os vendedores
+        //operações com FindAll que retornara uma lista com  todos os vendedores
         //Isso está de forma sincrona
         public List<Seller> FindAll()
         {
+            //acessa o banco de dados Seller e converte para uma lista
             return _context.Seller.ToList();
         }
 
